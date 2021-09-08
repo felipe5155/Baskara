@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./estilo/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Calculo Bhaskara</title>
+</head>
+<body>
+    <header>
+    <div id="hedbox">
+     <h1>Cálculo da equação do segundo grau</h1>
+    </div>
+</header>
+    <section>
+    <div id="box">
+    <h2 style="text-align: center;">Digitar valores nas células abaixo:</h2>
+
+    <div id="cx">
+
+    <input class="n1" type="number" id="va" value="" placeholder=""/> X²<br>
+    <input class="n1" type="number" id="vb" value="" placeholder=""/> X<br>
+    <input class="n1" type="number" id="vc" value="" placeholder=""/><br>
+    <input style="margin-left: 5px;" type="image" src="http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/48ef37ed99cee2c.png" widht="70" height="70" onClick="captar()" value="Calcular">
+    </div>
+    <div id="resultado">
+        <h3>resultados</h3>
+        <p>Delta</p>
+        <input type="num" id="saida1" disabled="disabled">
+        <p>X1</p>
+        <input type="num" id="saida2" disabled="disabled">
+        <p>X2</p>
+        <input type="num" id="saida3" disabled="disabled">
+    </div>
+    <script>
+
+    var delta, x1, x2, aa;
+
+    
+        function captar(){
+  
+        var v1 = document.getElementById('va').value;
+        var v2 = document.getElementById('vb').value;
+        var v3 = document.getElementById('vc').value;
+
+        delta = (v2 * v2) - (4 * v1 * v3);
+
+
+            if(delta < 0){
+
+                alert('Valor De Delta Invalido, Resultado Negativo');
+            }else{
+                var raiz = Math.sqrt(delta);
+                aa= 2*v1;
+                x1 = (-v2 - raiz) / aa;
+                x2 = (-v2 + raiz) / aa;
+
+                document.getElementById('saida1').value = delta;
+                document.getElementById('saida2').value = x1;
+                document.getElementById('saida3').value = x2;
+            }
+ 
+        }
+    </script>
+</section>
+</body>
+</html>
